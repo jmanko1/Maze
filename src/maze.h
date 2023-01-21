@@ -9,9 +9,9 @@ typedef struct wezel
     struct wezel **conn;
 } w_t;
 
-void generate_conns(w_t *, int *, int i, int j, int n);
-void generate_maze(w_t *, int *, int n);
-void draw_maze(w_t *, int n, int vp, int vk);
-void dfs(w_t *, int vs, int vk, int n);
+void generate_conns(w_t *, int *, int, int, int);
+void generate_maze(w_t *, int *, int);
+void draw_maze(w_t *, int, int, int);
+void dfs(w_t *, int, int, int);
 
 #endif // MAZE_H

@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <math.h>
+
 #include "maze.h"
 
 int main(int argc, char **argv)
@@ -12,8 +13,8 @@ int main(int argc, char **argv)
 
     if(k > 10 || k < 5)
     {
-            fprintf(stderr, "%s: Podano nieprawidłową długość krawędzi. Długość krawędzi musi być w przedziale od 5 do 10 włącznie\n", argv[0]);
-            return 1;
+        fprintf(stderr, "%s: Podano nieprawidłową długość krawędzi. Długość krawędzi musi być w przedziale od 5 do 10 włącznie\n", argv[0]);
+        return 1;
     }
     else if(vp < 0 || vp >= k)
     {
@@ -29,7 +30,7 @@ int main(int argc, char **argv)
     int w = k*k;
     int i, j;
     double ulam;
-
+    
     w_t *maze;
     int gen = 0;
 
@@ -39,7 +40,7 @@ int main(int argc, char **argv)
     for(i = 0; i < w; i++)
     {
         ulam = (double)rand() / RAND_MAX * 10;
-        ulam *= 100;
+	ulam *= 100;
 	ulam = floor(ulam);
 	ulam /= 100;
 
@@ -48,7 +49,9 @@ int main(int argc, char **argv)
         maze[i].conn = malloc(sizeof(w_t) * 4);
     }
 
-    generate_conns(maze, &gen, 0, 0, k);
+    maze[0].visited = 1;
+    gen++;
+    
     generate_maze(maze, &gen, k);
     draw_maze(maze, k, vp, vk);
     dfs(maze, vk, vp, w);
