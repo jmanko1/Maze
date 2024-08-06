@@ -1,5 +1,5 @@
 # Maze
-Labirynt w języku C
+Labirynt w języku C.
 Aby uruchomić aplikację, należy uruchomić terminal w systemie operacyjnym opartym na jądrze Linux. Należy podać ścieżkę do pliku exe oraz opcjonalnie argumenty wywołania:
 1. długość krawędzi (od 5 do 10 węzłów) - domyślnie 5
 2. punkt początkowy (musi znajdować się na górnej krawędzi labiryntu) - domyślnie 0
